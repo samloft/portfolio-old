@@ -24,4 +24,8 @@ Auth::routes([
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('about', [AboutController::class, 'index'])->name('about');
 Route::get('work', [WorkController::class, 'index'])->name('work');
-Route::get('contact', [ContactController::class, 'index'])->name('contact');
+
+Route::group(['prefix' => 'contact'], static function () {
+    Route::get('/', [ContactController::class, 'index'])->name('contact');
+    Route::post('/', [ContactController::class, 'store'])->name('contact.store');
+});
