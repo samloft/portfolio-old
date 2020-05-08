@@ -13,14 +13,12 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-dark antialiased">
-<div id="app" class="h-full">
-    <div class="h-screen">
-        @include('layouts.header')
+<div id="app">
+    @include('layouts.header')
 
-        <main class="mx-auto max-w-screen-xl px-4 sm:px-6 h-full">
-            @yield('content')
-        </main>
-    </div>
+    <main class="mx-auto max-w-screen-xl px-4 sm:px-6">
+        @yield('content')
+    </main>
 </div>
 
 @include('layouts.footer')

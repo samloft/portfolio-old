@@ -1,5 +1,4 @@
-<div class="relative overflow-hidden">
-    <div class="relative pt-6 pb-6">
+ <div class="pt-6 pb-6">
         <nav class="relative max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6 mb-20">
             <div class="flex items-center flex-1">
                 <div class="flex items-center justify-between w-full md:w-auto">
@@ -59,4 +58,3 @@
             </div>
         </div>
     </div>
-</div>
