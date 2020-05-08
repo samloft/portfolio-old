@@ -3,8 +3,8 @@
         <nav class="relative max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6 mb-20">
             <div class="flex items-center flex-1">
                 <div class="flex items-center justify-between w-full md:w-auto">
-                    <a href="/">
-                        <img class="h-8 w-auto" src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }}"/>
+                    <a href="/" class="hover:opacity-75 text-white">
+                        <h1 class="text-4xl font-bold tracking-tighter">DEVLOFT</h1>
                     </a>
                 </div>
             </div>
