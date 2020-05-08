@@ -23,18 +23,18 @@
 
             <div class="mb-3">
                 <input id="name" name="name" class="bg-dark rounded shadow w-full py-2 px-2 mt-2 text-gray-300"
-                       placeholder="Your name">
+                       placeholder="Your name" value="{{ old('name') }}" required>
             </div>
 
             <div class="mb-3">
-                <input id="email" name="email" class="bg-dark rounded shadow w-full py-2 px-2 mt-2 text-gray-300"
-                       placeholder="Your Email Address">
+                <input id="email" name="email" type="email" class="bg-dark rounded shadow w-full py-2 px-2 mt-2 text-gray-300"
+                       placeholder="Your Email Address" value="{{ old('email') }}" required>
             </div>
 
             <div class="mb-3">
             <textarea id="message" name="message" rows="6"
                       class="bg-dark rounded shadow w-full py-2 px-2 mt-2 text-gray-300"
-                      placeholder="Your Message"></textarea>
+                      placeholder="Your Message" required>{{ old('message') }}</textarea>
             </div>
 
             <div class="text-right">
