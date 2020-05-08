@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WorkController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +21,7 @@ Auth::routes([
     'register' => false,
 ]);
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('about', [AboutController::class, 'index'])->name('about');
+Route::get('work', [WorkController::class, 'index'])->name('work');
+Route::get('contact', [ContactController::class, 'index'])->name('contact');
