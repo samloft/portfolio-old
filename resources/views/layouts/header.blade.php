@@ -1,5 +1,5 @@
- <div class="pt-6 pb-6">
-        <nav class="relative max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6 mb-20">
+ <div class="pt-3 pb-3">
+        <nav class="relative max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6 mb-10">
             <div class="flex items-center flex-1">
                 <div class="flex items-center justify-between w-full md:w-auto">
                     <a href="/" class="hover:opacity-75 text-white">
