@@ -36,5 +36,10 @@ Route::group(['prefix' => 'cms', 'middleware' => 'auth'], static function () {
 
     Route::group(['prefix' => 'works'], static function () {
         Route::get('/', [\App\Http\Controllers\Cms\WorkController::class, 'index'])->name('cms.works');
+        Route::get('create', [\App\Http\Controllers\Cms\WorkController::class, 'create'])->name('cms.works.create');
+        Route::post('/', [\App\Http\Controllers\Cms\WorkController::class, 'store'])->name('cms.works.store');
+        Route::get('edit/{id}', [\App\Http\Controllers\Cms\WorkController::class, 'edit'])->name('cms.works.edit');
+        Route::patch('edit/{id}', [\App\Http\Controllers\Cms\WorkController::class, 'updated'])->name('cms.works.update');
+        Route::delete('{id}', [\App\Http\Controllers\Cms\WorkController::class, 'destroy'])->name('cms.works.destroy');
     });
 });
