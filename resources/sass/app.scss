@@ -28,7 +28,6 @@ h1 {
         @apply bg-dark border-b border-dark rounded-t-lg text-gray-100 text-sm;
 
         text-shadow: 2px 2px 0 rgba(0,0,0,.15);
-        text-align: center;
         width: 100%;
         height: 20px;
         user-select: none;
@@ -36,12 +35,14 @@ h1 {
         -moz-user-select: none;
         -ms-user-select: none;
         cursor: default;
-        line-height: 20px;
+        line-height: 18px;
     }
 
     .buttons {
-        padding-left: 8px;
-        padding-top: 3px;
+        @apply mr-3;
+
+        padding-left: 6px;
+        padding-top: 4px;
         float: left;
         line-height: 0;
     }
@@ -60,7 +61,7 @@ h1 {
         background: #ffbd4c;
         font-size: 9pt;
         line-height: 11px;
-        margin-left: 4px;
+        margin-left: 3px;
         width: 11px;
         height: 11px;
         border: 1px solid #e09e3e;
@@ -72,7 +73,7 @@ h1 {
         background: #00ca56;
         font-size: 9pt;
         line-height: 11px;
-        margin-left: 6px;
+        margin-left: 5px;
         width: 11px;
         height: 11px;
         border: 1px solid #14ae46;
