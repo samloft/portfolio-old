@@ -79,4 +79,38 @@ h1 {
         border-radius: 50%;
         display: inline-block;
     }
+
+    .content {
+        @apply relative;
+
+        &:hover {
+            .overlay {
+                @apply opacity-100;
+            }
+
+            .text{
+                @apply top-1/2 left-1/2 opacity-100;
+            }
+        }
+
+        .overlay {
+            @apply absolute bg-black w-full left-0 top-0 bottom-0 right-0 m-0 p-0 opacity-0;
+
+            -webkit-transition: all 0.4s ease-in-out 0s;
+            -moz-transition: all 0.4s ease-in-out 0s;
+            transition: all 0.4s ease-in-out 0s;
+        }
+
+        .text {
+            @apply absolute text-center w-full left-1/2 top-2/5 opacity-0 tracking-wider font-semibold;
+
+            text-shadow: 2px 2px 0 rgba(0,0,0,.15);
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-transition: all 0.3s ease-in-out 0s;
+            -moz-transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ease-in-out 0s;
+        }
+    }
 }
