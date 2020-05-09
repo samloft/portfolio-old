@@ -32,7 +32,9 @@ Route::group(['prefix' => 'contact'], static function () {
 });
 
 Route::group(['prefix' => 'cms', 'middleware' => 'auth'], static function () {
-    Route::get('/', static function () {
-        return 'Hello';
+    Route::get('/', [\App\Http\Controllers\Cms\HomeController::class, 'index'])->name('cms.home');
+
+    Route::group(['prefix' => 'works'], static function () {
+        Route::get('/', [\App\Http\Controllers\Cms\WorkController::class, 'index'])->name('cms.works');
     });
 });
