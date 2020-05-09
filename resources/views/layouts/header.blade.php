@@ -25,19 +25,8 @@
         </div>
     </nav>
 
-    <!--
-      Mobile menu, show/hide based on menu open state.
-
-      Entering: "duration-150 ease-out"
-        From: "opacity-0 scale-95"
-        To: "opacity-100 scale-100"
-      Leaving: "duration-100 ease-in"
-        From: "opacity-100 scale-100"
-        To: "opacity-0 scale-95"
-    -->
-    <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
-        <div class="rounded-lg shadow-md">
-            <div class="rounded-lg bg-white shadow-xs overflow-hidden">
+    <div class="absolute top-0 transition transform origin-top-right md:hidden h-full w-full z-50">
+            <div class="bg-dark shadow-xs overflow-hidden h-full w-full">
                 <div class="px-5 pt-4 flex items-center justify-between">
                     <div>
                         <img class="h-8 w-auto" src="{{ asset('images/logo.png') }}"
@@ -55,6 +44,5 @@
                         Me</a>
                 </div>
             </div>
-        </div>
     </div>
 </div>

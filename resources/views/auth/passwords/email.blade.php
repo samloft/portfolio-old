@@ -1,47 +1,23 @@
-@extends('layouts.app')
+@extends('auth.master')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <form method="POST" action="{{ route('password.email') }}" class="bg-light rounded shadow-lg px-10 py-10 mt-10 text-white w-2/4 mx-auto">
+        @csrf
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+        @include('layouts.alerts')
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+        <div class="mb-3">
+            <label class="block text-sm font-semibold mb-2" for="email">
+                Email Address
+            </label>
+            <input id="email" class="bg-dark rounded shadow w-full py-2 px-2 mt-2 text-gray-300" name="email" type="text"
+                   placeholder="E-Mail" autocomplete="email" value="{{ $email ?? old('email') }}" required autofocus>
         </div>
-    </div>
-</div>
+        <div class="flex">
+            <button
+                class="bg-dark hover:opacity-75 w-full p-2 border border-white text-sm text-white uppercase font-bold tracking-wider rounded-lg">
+                Send Password Reset Link
+            </button>
+        </div>
+    </form>
 @endsection

@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes([
     'register' => false,
+    'prefix' => 'cms',
 ]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -28,4 +29,10 @@ Route::get('work', [WorkController::class, 'index'])->name('work');
 Route::group(['prefix' => 'contact'], static function () {
     Route::get('/', [ContactController::class, 'index'])->name('contact');
     Route::post('/', [ContactController::class, 'store'])->name('contact.store');
+});
+
+Route::group(['prefix' => 'cms', 'middleware' => 'auth'], static function () {
+    Route::get('/', static function () {
+        return 'Hello';
+    });
 });
