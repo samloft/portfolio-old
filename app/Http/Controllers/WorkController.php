@@ -11,7 +11,7 @@ class WorkController extends Controller
      */
     public function index()
     {
-        $works = Work::with('images')->get();
+        $works = Work::with('images')->orderBy('id', 'desc')->get();
 
         return view('work.index', compact('works'));
     }
