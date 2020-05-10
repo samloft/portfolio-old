@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+
+    @yield('styles')
 </head>
 <body class="bg-dark antialiased">
 <div id="app">
@@ -28,6 +30,8 @@
 </div>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+
+@yield('scripts')
 
 </body>
 </html>

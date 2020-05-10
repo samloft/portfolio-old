@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWorksTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,10 @@ class CreateWorksTable extends Migration
      */
     public function up(): void
     {
-        Schema::create('works', static function (Blueprint $table) {
+        Schema::create('images', static function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('slug');
+            $table->bigInteger('work_id');
             $table->string('image');
-            $table->longText('description');
-            $table->string('github')->nullable();
-            $table->string('website')->nullable();
             $table->timestamps();
         });
     }
@@ -32,6 +28,6 @@ class CreateWorksTable extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('works');
+        Schema::dropIfExists('images');
     }
 }

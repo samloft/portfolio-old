@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Work;
+
 class WorkController extends Controller
 {
     /**
@@ -9,6 +11,8 @@ class WorkController extends Controller
      */
     public function index()
     {
-        return view('work.index');
+        $works = Work::with('images')->get();
+
+        return view('work.index', compact('works'));
     }
 }

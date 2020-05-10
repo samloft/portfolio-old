@@ -16,7 +16,7 @@
                         <div class="overlay"></div>
 
                         <img class="w-full h-auto" :alt="work.title"
-                             :src="work.image">
+                             :src="'/storage/images/works/' + work.slug + '/' + work.image">
 
                         <div class="text">
                             <span class="block mb-5 text-lg">{{ work.title }}</span>
@@ -48,22 +48,25 @@
                     <div class="w-1/2 mx-auto mr-20">
                         <div>
                             <div class="border border-white rounded-lg h-1/2">
-                                <img :src="selectedImage" :alt="project.title" class="w-full rounded-lg object-cover"/>
+                                <img :src="'/storage/images/works/' + project.slug + '/' + selectedImage"
+                                     :alt="project.title" class="w-full rounded-lg object-cover"/>
                             </div>
 
                             <div class="flex flex-wrap mt-3 mb-5">
-                                <img v-for="image in project.images" :src="image" :alt="image"
+                                <img v-for="image in project.images"
+                                     :src="'/storage/images/works/' + project.slug + '/' + image.image"
+                                     :alt="image.image"
                                      class="h-12 w-12 grid-col"
-                                     @click="selectedImage = image"
-                                     :class="selectedImage === image ? 'border border-white cursor-not-allowed' : 'cursor-pointer hover:opacity-75'">
+                                     @click="selectedImage = image.image"
+                                     :class="selectedImage === image.image ? 'border border-white cursor-not-allowed' : 'cursor-pointer hover:opacity-75'">
                             </div>
                         </div>
                     </div>
 
                     <div class="w-3/4 mx-auto p-3">
                         <div class="flex mb-3">
-                            <a href="" target="_blank"
-                                class="flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold mr-3">
+                            <a v-if="project.website" :href="project.website" target="_blank"
+                               class="flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold mr-3">
                                 Visit Website
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
@@ -73,8 +76,8 @@
                                 </svg>
                             </a>
 
-                            <a href="" target="_blank"
-                                class="flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold">
+                            <a v-if="project.github" :href="project.github" target="_blank"
+                               class="flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold">
                                 View on GitHub
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
@@ -87,36 +90,7 @@
 
                         <h1 class="text-center md:text-left text-3xl font-bold tracking-tighter">About this project</h1>
 
-                        <p class="mb-3">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore
-                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi
-                            ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                            esse
-                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                            in
-                            culpa qui officia deserunt mollit anim id est laborum.
-                        </p>
-
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore
-                            </li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore
-                            </li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore
-                            </li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore
-                            </li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore
-                            </li>
-                        </ul>
+                        <div v-html="project.description"></div>
                     </div>
                 </div>
             </div>
@@ -148,41 +122,13 @@
 
 <script>
     export default {
+        props: {
+            works_data: {},
+        },
         data() {
             return {
                 modal: false,
-                works: [
-                    {
-                        title: 'Project number one',
-                        image: 'https://www.formget.com/wp-content/uploads/2019/12/LinkPeek-Website-Screenshot-API.png',
-                        images: [
-                            "https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2016/02/17/23/03/usa-1206240_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2015/05/15/14/27/eiffel-tower-768501_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg"
-                        ],
-                    },
-                    {
-                        title: 'Project number two',
-                        image: 'https://www.formget.com/wp-content/uploads/2019/12/LinkPeek-Website-Screenshot-API.png',
-                        images: [
-                            "https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2016/02/17/23/03/usa-1206240_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2015/05/15/14/27/eiffel-tower-768501_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg"
-                        ],
-                    },
-                    {
-                        title: 'Project number three',
-                        image: 'https://www.formget.com/wp-content/uploads/2019/12/LinkPeek-Website-Screenshot-API.png',
-                        images: [
-                            "https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2016/02/17/23/03/usa-1206240_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2015/05/15/14/27/eiffel-tower-768501_1280.jpg",
-                            "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg"
-                        ],
-                    },
-                ],
+                works: [],
                 project: {},
                 images: {},
                 selectedImage: null,
@@ -191,15 +137,17 @@
         methods: {
             openWork: function (project) {
                 this.project = project;
-                this.selectedImage = project.images[0];
+                this.selectedImage = project.images[0].image;
                 this.images = project.images;
 
                 this.modal = true;
-                this.startSlide();
             },
             closeWork: function () {
                 this.modal = false;
             },
         },
+        mounted() {
+            this.works = this.works_data;
+        }
     }
 </script>

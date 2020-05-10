@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="flex flex-col">
+        @include('layouts.alerts')
+
         <div class="text-right mb-3">
             <a href="{{ route('cms.works.create') }}">
                 <button type="submit"
@@ -37,14 +39,14 @@
                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 text-gray-500 border-b border-gray-200">
                             <span
                                 class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                6
+                                {{ count($work->images) }}
                             </span>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-sm leading-5 font-medium text-gray-900 border-b border-gray-200">
                                 {{ \Carbon\Carbon::parse($work->created_at)->format('d-m-Y') }}
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium border-b border-gray-200">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <a href="{{ route('cms.works.edit', ['work' => $work->id]) }}" class="text-indigo-600 hover:text-indigo-900">Edit</a>
                             </td>
                         </tr>
                     @endforeach

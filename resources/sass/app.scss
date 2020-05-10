@@ -121,3 +121,11 @@ h1 {
         }
     }
 }
+
+.note-editor.note-airframe, .note-editor.note-frame {
+    border: none !important;
+}
+
+.note-editor.note-airframe .note-editing-area .note-editable, .note-editor.note-frame .note-editing-area .note-editable {
+    @apply bg-dark text-white #{!important};
+}

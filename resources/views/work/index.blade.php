@@ -8,6 +8,6 @@
             A selection of works I have completed 👨‍💻.
         </p>
 
-        <works></works>
+        <works :works_data="{{ json_encode($works, true) }}"></works>
     </div>
 @endsection
