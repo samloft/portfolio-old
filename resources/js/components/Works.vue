@@ -56,9 +56,9 @@
                                 <img v-for="image in project.images"
                                      :src="'/storage/images/works/' + project.slug + '/' + image.image"
                                      :alt="image.image"
-                                     class="h-12 w-12 grid-col"
+                                     class="h-12 w-12 m-1"
                                      @click="selectedImage = image.image"
-                                     :class="selectedImage === image.image ? 'border border-white cursor-not-allowed' : 'cursor-pointer hover:opacity-75'">
+                                     :class="selectedImage === image.image ? 'border-2 border-indigo-600 cursor-not-allowed' : 'cursor-pointer hover:opacity-75'">
                             </div>
                         </div>
                     </div>
