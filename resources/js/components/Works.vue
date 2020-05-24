@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="mt-6 grid grid-cols-2 gap-4 lg:mt-8">
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 lg:mt-8">
             <div v-for="work in works" class="col-span-1 flex justify-center browser">
                 <div class="window relative">
                     <div class="titlebar">
@@ -12,7 +12,7 @@
 
                         {{ work.title }}
                     </div>
-                    <div class="content">
+                    <div class="content" @click="openWork(work)">
                         <div class="overlay"></div>
 
                         <img class="w-full h-auto" :alt="work.title"
@@ -21,8 +21,7 @@
                         <div class="text">
                             <span class="block mb-5 text-lg">{{ work.title }}</span>
 
-                            <button @click="openWork(work)"
-                                    class="py-2 px-4 border rounded border-white hover:text-black hover:bg-white shadow">
+                            <button class="py-2 px-4 border rounded border-white hover:text-black hover:bg-white shadow">
                                 View 👨‍💻
                             </button>
                         </div>
@@ -32,9 +31,9 @@
         </div>
 
         <transition name="bounce">
-            <div v-if="modal" class="modal fixed bottom-0 inset-x-0 w-full h-full bg-light p-16 overflow-auto">
+            <div v-if="modal" class="modal fixed bottom-0 inset-x-0 w-full h-full bg-light p-5 md:p-16 overflow-auto">
                 <div class="flex justify-between mb-8">
-                    <h1 class="text-4xl font-bold tracking-tighter">{{ project.title }}</h1>
+                    <h1 class="text-2xl md:text-4xl font-bold tracking-tighter">{{ project.title }}</h1>
 
                     <button @click="closeWork()" class="hover:text-gray-300">
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,8 +43,8 @@
                     </button>
                 </div>
 
-                <div class="flex">
-                    <div class="w-1/2 mx-auto mr-20">
+                <div class="flex flex-col flex-col-reverse md:flex-row">
+                    <div class="w-full md:w-1/2 mx-auto md:mr-20">
                         <div>
                             <div class="border border-white rounded-lg h-1/2">
                                 <img :src="'/storage/images/works/' + project.slug + '/' + selectedImage"
@@ -63,10 +62,10 @@
                         </div>
                     </div>
 
-                    <div class="w-3/4 mx-auto p-3">
+                    <div class="w-full md:w-3/4 mx-auto md:p-3">
                         <div class="flex mb-3">
                             <a v-if="project.website" :href="project.website" target="_blank"
-                               class="flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold mr-3">
+                               class="text-sm md:text-base flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold mr-3">
                                 Visit Website
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
@@ -77,7 +76,7 @@
                             </a>
 
                             <a v-if="project.github" :href="project.github" target="_blank"
-                               class="flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold">
+                               class="text-sm md:text-base flex bg-dark py-2 px-4 rounded shadow-lg hover:opacity-75 border border-white font-semibold">
                                 View on GitHub
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
@@ -90,7 +89,7 @@
 
                         <h1 class="text-center md:text-left text-3xl font-bold tracking-tighter">About this project</h1>
 
-                        <div v-html="project.description"></div>
+                        <div v-html="project.description" class="mb-3 md:mb-0"></div>
                     </div>
                 </div>
             </div>

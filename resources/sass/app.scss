@@ -31,7 +31,7 @@ h1 {
     }
 
     .titlebar {
-        @apply bg-dark border-b border-dark rounded-t-lg text-gray-100 text-sm;
+        @apply bg-dark border-b border-dark rounded-t-lg text-gray-100 text-xs;
 
         text-shadow: 2px 2px 0 rgba(0,0,0,.15);
         width: 100%;
@@ -42,6 +42,10 @@ h1 {
         -ms-user-select: none;
         cursor: default;
         line-height: 18px;
+
+        @screen md {
+            @apply text-sm;
+        }
     }
 
     .buttons {

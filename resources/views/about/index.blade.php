@@ -3,7 +3,7 @@
 @section('content')
     <div class="bg-light p-5 md:p-12 md:w-3/4 rounded shadow mx-auto text-white mb-3 md:mb-10">
         <div class="md:flex mb-5">
-            <div class=md:"w-3/4">
+            <div class="md:w-3/4">
                 <div class="md:hidden mb-3 flex justify-center">
                     <img class="h-24 rounded-full border border-white" src="{{ asset('images/me.png') }}" alt="It's me">
                 </div>
@@ -23,7 +23,7 @@
                     less frequently).
                 </p>
             </div>
-            <div class="hidden vw-1/4 md:flex justify-end">
+            <div class="hidden w-1/4 md:flex justify-end">
                 <img class="h-24 rounded-full border border-white" src="{{ asset('images/me.png') }}" alt="It's me">
             </div>
         </div>
