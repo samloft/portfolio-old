@@ -14,7 +14,7 @@
         </i>
 
         <div :class="expanded ? 'img-expanded' : ''" class="flex justify-center w-full">
-            <img v-bind="$attrs" :class="expanded ? 'img-expanded' : ''" class="max-h-screen w-auto mx-auto"/>
+            <img v-bind="$attrs" :class="expanded ? 'img-expanded' : ''" class="rounded-lg w-full mx-auto"/>
         </div>
     </div>
 </template>
@@ -97,9 +97,9 @@
         cursor: default;
     }
 
-    .expandable-image.expanded > img {
+    .expandable-image img {
         width: auto;
-        max-height: 70%;
+        max-height: 100vh;
         margin: 0 auto;
     }
 
