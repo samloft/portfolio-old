@@ -97,7 +97,7 @@
         cursor: default;
     }
 
-    .expandable-image img {
+    .img-expanded {
         width: auto;
         max-height: 100vh;
         margin: 0 auto;
