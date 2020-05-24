@@ -47,7 +47,7 @@
                     <div class="w-full md:w-1/2 mx-auto md:mr-20">
                         <div>
                             <div class="border border-white rounded-lg md:h-1/2">
-                                <enlarge-image class="w-full rounded-lg object-cover"
+                                <enlarge-image
                                 :src="'/storage/images/works/' + project.slug + '/' + selectedImage"
                                 :alt="project.title"></enlarge-image>
                             </div>

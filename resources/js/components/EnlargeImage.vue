@@ -97,11 +97,11 @@
         cursor: default;
     }
 
-    /*.img-expanded img {*/
-    /*    width: auto;*/
-    /*    max-height: 100vh;*/
-    /*    margin: 0 auto;*/
-    /*}*/
+    .img-expanded img {
+        width: auto;
+        max-height: 100vh;
+        margin: 0 auto;
+    }
 
     .expandable-image.expanded > .close-button {
         display: block;
