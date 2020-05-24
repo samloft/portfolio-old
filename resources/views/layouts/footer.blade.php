@@ -1,6 +1,6 @@
 <footer class="max-w-screen-xl mx-auto">
-    <div class="border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
-        <div class="flex md:order-2">
+    <div class="border-t border-gray-700 px-2 md:px-4 pt-6 md:pt-8 flex items-center justify-between">
+        <div class="flex">
             <a href="https://www.linkedin.com/in/samuel-loft-71880b88/" class="text-gray-400 hover:text-gray-300" target="_blank">
                 <span class="sr-only">LinkedIn</span>
                 <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -14,7 +14,7 @@
                 </svg>
             </a>
         </div>
-        <p class="mt-8 text-base leading-6 text-gray-400 md:mt-0 md:order-1">
+        <p class="text-base leading-6 text-gray-400 md:mt-0 md:order-1">
             &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
         </p>
     </div>
