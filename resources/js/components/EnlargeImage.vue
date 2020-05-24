@@ -14,7 +14,7 @@
         </i>
 
         <div :class="expanded ? 'img-expanded' : ''" class="flex justify-center w-full">
-            <img v-bind="$attrs" :class="expanded ? 'img-expanded' : ''" class="rounded-lg"/>
+            <img v-bind="$attrs" :class="expanded ? 'img-expanded' : 'w-full h-auto mx-auto'" class="block rounded-lg"/>
         </div>
     </div>
 </template>
