@@ -13,8 +13,8 @@
 
         </i>
 
-        <div :class="expanded ? 'img-expanded' : ''" class="flex justify-center w-full">
-            <img v-bind="$attrs" :class="expanded ? 'img-expanded' : ''" class="rounded-lg w-full mx-auto"/>
+        <div :class="expanded ? 'img-expanded' : ''" class="flex justify-center w-full h-auto">
+            <img v-bind="$attrs" :class="expanded ? 'img-expanded' : ''" class="rounded-lg w-full h-auto mx-auto"/>
         </div>
     </div>
 </template>
