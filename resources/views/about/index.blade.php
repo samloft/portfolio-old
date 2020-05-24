@@ -11,7 +11,7 @@
                 <h1 class="text-4xl font-bold tracking-tighter">About me</h1>
 
                 <p class="text-gray-400 font-light leading-tight mb-3">
-                    My name is Samuel and I'm a full stack developer. I have always had a passion for the development
+                    My name is Samuel and I'm a full stack developer with over 5 years experience. I have always had a passion for the development
                     world and lucky that not only is
                     this my full-time job, but also my hobby.
                 </p>

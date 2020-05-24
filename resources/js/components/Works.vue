@@ -47,8 +47,11 @@
                     <div class="w-full md:w-1/2 mx-auto md:mr-20">
                         <div>
                             <div class="border border-white rounded-lg h-1/2">
-                                <img :src="'/storage/images/works/' + project.slug + '/' + selectedImage"
-                                     :alt="project.title" class="w-full rounded-lg object-cover"/>
+                                <enlarge-image class="w-full rounded-lg object-cover"
+                                :src="'/storage/images/works/' + project.slug + '/' + selectedImage"
+                                :alt="project.title"></enlarge-image>
+<!--                                <img :src="'/storage/images/works/' + project.slug + '/' + selectedImage"-->
+<!--                                     :alt="project.title" class="w-full rounded-lg object-cover"/>-->
                             </div>
 
                             <div class="flex flex-wrap mt-3 mb-5">
