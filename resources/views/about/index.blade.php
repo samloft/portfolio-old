@@ -1,9 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="bg-light p-12 w-3/4 rounded shadow mx-auto text-white mb-10">
-        <div class="flex mb-5">
-            <div class="w-3/4">
+    <div class="bg-light p-5 md:p-12 md:w-3/4 rounded shadow mx-auto text-white mb-3 md:mb-10">
+        <div class="md:flex mb-5">
+            <div class=md:"w-3/4">
+                <div class="md:hidden mb-3 flex justify-center">
+                    <img class="h-24 rounded-full border border-white" src="{{ asset('images/me.png') }}" alt="It's me">
+                </div>
+
                 <h1 class="text-4xl font-bold tracking-tighter">About me</h1>
 
                 <p class="text-gray-400 font-light leading-tight mb-3">
@@ -19,7 +23,7 @@
                     less frequently).
                 </p>
             </div>
-            <div class="w-1/4 flex justify-end">
+            <div class="hidden vw-1/4 md:flex justify-end">
                 <img class="h-24 rounded-full border border-white" src="{{ asset('images/me.png') }}" alt="It's me">
             </div>
         </div>
@@ -46,7 +50,7 @@
                 Depending on what I am working on, the stack can change, but my bread and butter is..
             </p>
 
-            <div class="mt-6 grid grid-cols-2 gap-0.5 md:grid-cols-3 lg:mt-8">
+            <div class="mt-6 grid grid-cols-1 gap-0.5 md:grid-cols-3 lg:mt-8">
                 <div class="col-span-1 flex justify-center py-8 px-8 bg-dark">
                     <img class="max-h-12" src="{{ asset('images/php.png') }}" alt="PHP"/>
                 </div>

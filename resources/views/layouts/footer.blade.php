@@ -1,5 +1,5 @@
 <footer class="max-w-screen-xl mx-auto">
-    <div class="border-t border-gray-700 px-2 md:px-4 pt-6 md:pt-8 flex items-center justify-between">
+    <div class="border-t border-gray-700 px-4 md:px-4 pt-6 md:pt-8 flex items-center justify-between">
         <div class="flex">
             <a href="https://www.linkedin.com/in/samuel-loft-71880b88/" class="text-gray-400 hover:text-gray-300" target="_blank">
                 <span class="sr-only">LinkedIn</span>
