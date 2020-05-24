@@ -1,5 +1,5 @@
 <div class="pt-3 pb-3">
-    <nav class="relative max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6 mb-10">
+    <nav class="hidden md:relative max-w-screen-xl mx-auto md:flex items-center justify-between px-4 sm:px-6 mb-10">
         <div class="flex items-center flex-1">
             <div class="flex items-center justify-between w-full md:w-auto">
                 <a href="/" class="hover:opacity-75 text-white">
@@ -25,24 +25,20 @@
         </div>
     </nav>
 
-    <div class="absolute top-0 transition transform origin-top-right md:hidden h-full w-full z-50">
-            <div class="bg-dark shadow-xs overflow-hidden h-full w-full">
-                <div class="px-5 pt-4 flex items-center justify-between">
-                    <div>
-                        <img class="h-8 w-auto" src="{{ asset('images/logo.png') }}"
-                             alt="{{ config('app.name') }}"/>
+            <mobile-menu>
+                <template slot="menu">
+                    <div class="text-center leading-loose">
+                        <a href="{{ route('home') }}"
+                           class="{{ strpos(request()->route()->getName(), 'home') !== false ? 'underline' : '' }} block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">Home</a>
+                        <a href="{{ route('about') }}"
+                           class="{{ strpos(request()->route()->getName(), 'about') !== false ? 'underline' : '' }} block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">About</a>
+                        <a href="{{ route('work') }}"
+                           class="{{ strpos(request()->route()->getName(), 'work') !== false ? 'underline' : '' }} mt-1 block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">My
+                            Work</a>
+                        <a href="{{ route('contact') }}"
+                           class="{{ strpos(request()->route()->getName(), 'contact') !== false ? 'underline' : '' }} mt-1 block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">Contact
+                            Me</a>
                     </div>
-                </div>
-                <div class="px-2 pt-2 pb-3">
-                    <a href="#"
-                       class="block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">About</a>
-                    <a href="#"
-                       class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">My
-                        Work</a>
-                    <a href="#"
-                       class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-200 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Contact
-                        Me</a>
-                </div>
-            </div>
-    </div>
+                </template>
+            </mobile-menu>
 </div>
