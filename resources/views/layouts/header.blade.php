@@ -25,20 +25,20 @@
         </div>
     </nav>
 
-            <mobile-menu>
-                <template slot="menu">
-                    <div class="text-center leading-loose">
-                        <a href="{{ route('home') }}"
-                           class="{{ strpos(request()->route()->getName(), 'home') !== false ? 'underline' : '' }} block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">Home</a>
-                        <a href="{{ route('about') }}"
-                           class="{{ strpos(request()->route()->getName(), 'about') !== false ? 'underline' : '' }} block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">About</a>
-                        <a href="{{ route('work') }}"
-                           class="{{ strpos(request()->route()->getName(), 'work') !== false ? 'underline' : '' }} mt-1 block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">My
-                            Work</a>
-                        <a href="{{ route('contact') }}"
-                           class="{{ strpos(request()->route()->getName(), 'contact') !== false ? 'underline' : '' }} mt-1 block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">Contact
-                            Me</a>
-                    </div>
-                </template>
-            </mobile-menu>
+    <mobile-menu class="md:hidden">
+        <template slot="menu">
+            <div class="text-center leading-loose">
+                <a href="{{ route('home') }}"
+                   class="{{ strpos(request()->route()->getName(), 'home') !== false ? 'underline' : '' }} block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">Home</a>
+                <a href="{{ route('about') }}"
+                   class="{{ strpos(request()->route()->getName(), 'about') !== false ? 'underline' : '' }} block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">About</a>
+                <a href="{{ route('work') }}"
+                   class="{{ strpos(request()->route()->getName(), 'work') !== false ? 'underline' : '' }} mt-1 block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">My
+                    Work</a>
+                <a href="{{ route('contact') }}"
+                   class="{{ strpos(request()->route()->getName(), 'contact') !== false ? 'underline' : '' }} mt-1 block px-3 py-2 rounded-md text-2xl font-medium text-gray-200 hover:underline transition duration-150 ease-in-out">Contact
+                    Me</a>
+            </div>
+        </template>
+    </mobile-menu>
 </div>

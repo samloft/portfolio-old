@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="flex justify-between items-center mt-1/12">
-        <div class="sm:text-center lg:text-left w-3/5">
+    <div class="md:flex justify-between items-center mt-1/12">
+        <div class="text-center md:text-left md:w-3/5 mb-10 md-mb:0">
             <h2 class="mt-1 text-4xl tracking-tight leading-10 font-extrabold text-indigo-600 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl">
                 Hello 👋
                 <br/>
