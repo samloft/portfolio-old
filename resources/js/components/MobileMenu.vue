@@ -1,7 +1,7 @@
 <template>
     <div
         :class="isOpen ? 'absolute top-0 transition transform origin-top-right md:hidden h-full w-full z-50 pt-3' : ''">
-        <div class="bg-dark shadow-xs overflow-hidden h-full w-full">
+        <div class="bg-dark shadow-b-xs overflow-hidden h-full w-full">
             <div class="px-5 pt-4 flex items-center justify-between mb-5">
                 <div>
                     <a href="/">
