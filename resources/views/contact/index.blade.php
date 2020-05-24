@@ -1,8 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="bg-light p-12 w-3/4 rounded shadow mx-auto text-white">
-        <div class="mb-10">
+    <div class="bg-light p-5 md:p-12 md:w-3/4 rounded shadow mx-auto text-white">
+        <div class="mb-5 md:mb-10">
             <h1 class="text-4xl font-bold tracking-tighter">Get in touch</h1>
 
             <p class="text-gray-400 font-light leading-tight mb-3">
@@ -29,6 +29,10 @@
             <div class="mb-3">
                 <input id="email" name="email" type="email" class="bg-dark rounded shadow w-full py-2 px-2 mt-2 text-gray-300"
                        placeholder="Your Email Address" value="{{ old('email') }}" required>
+            </div>
+
+            <div class="hidden">
+                <input name="mobile" value="1" required>
             </div>
 
             <div class="mb-3">

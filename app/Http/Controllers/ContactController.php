@@ -25,6 +25,10 @@ class ContactController extends Controller
      */
     public function store(): RedirectResponse
     {
+        if (request('mobile') !== '1') {
+            return back()->with('error', 'No bots please.');
+        }
+
         request()->validate([
             'name' => 'required',
             'email' => 'required|email',

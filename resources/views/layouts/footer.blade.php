@@ -14,7 +14,7 @@
                 </svg>
             </a>
         </div>
-        <p class="text-base leading-6 text-gray-400 md:mt-0 md:order-1">
+        <p class="text-sm md:text-base leading-6 text-gray-400 md:mt-0 md:order-1">
             &copy; {{ date('Y') }} {{ config('app.name') }}. All rights reserved.
         </p>
     </div>
