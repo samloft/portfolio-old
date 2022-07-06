@@ -12,8 +12,6 @@
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
-    <script src="https://cdn.usefathom.com/script.js" data-site="NTSTFXWC" defer></script>
-
 </head>
 <body class="bg-dark antialiased">
 <div id="app">
