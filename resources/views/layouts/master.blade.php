@@ -6,12 +6,12 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - Samuel Loft portfolio</title>
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    
+
     <script src="https://cdn.usefathom.com/script.js" data-site="NTSTFXWC" defer></script>
 
 </head>
